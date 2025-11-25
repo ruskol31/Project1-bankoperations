@@ -1,7 +1,8 @@
+from typing import List, Dict
+
 import requests
 import pandas as pd
 from datetime import datetime
-
 from pandas import DataFrame
 
 
@@ -21,37 +22,93 @@ def time_for_greeting():
         return "Доброq ночи"
 
 
-def get_data_time(date_time: str, date_format: "%Y.%m.%d %H:%M.%S") -> list[str]:
+def get_data_time(date_time: str, date_format: "%Y.%m.%d %H:%M:%S") -> list[str]:
     dt = datetime.strptime(date_time, date_format)
     start_date = dt.replace(day=1)
 
     return [
-        start_date.strftime("%Y.%m.%d %H:%M.%S"),
-        dt.strftime("%Y.%m.%d %H:%M.%S")
+        start_date.strftime("%d.%m.%Y %H:%M:%S"),
+        dt.strftime("%d.%m.%Y %H:%M:%S")
     ]
 
-def get_path_and_period(path_to_file: str, period_date: list) -> DataFrame:
 
-def read_financial_operations_exel(file_path):
-    """
-    :param file_path: принимает на вход путь до exel-файла и
-    :return: список словарей с данными о финансовых транзакциях
-    """
+def get_path_and_period(path_to_file: str, period_date: List[str]) -> DataFrame:
+    """ принимает путь к xlx файлу и период за который рассматриваются операции
+    и возвращает таблицу значений в заданном диапазоне"""
 
-    df = pd.read_excel(file_path)
-    operations = df.to_dict(orient='records')
+    df = pd.read_excel(path_to_file, sheet_name="Отчет по операциям")
 
-    return operations
+    df["Дата операции"] = pd.to_datetime(df["Дата операции"], dayfirst=True)
 
-def get_500_company_tickers() -> list:
-    api_url = 'https://api.api-ninjas.com/v1/sp500'
-    response = requests.get(api_url, headers={'X-Api-Key': 'iI019ChSxoTeg94zTqiChw==QhpFM6wBFh70ftUg'})
-    if response.status_code == 200:
-        data = response.json()
-        return [item["ticker"] for item in data]
-    else:
-        print("Ошибка получения тикеров:", response.status_code, response.text)
-        return []
+    start_date = datetime.strptime(period_date[0], "%d.%m.%Y %H:%M:%S")
+    end_date = datetime.strptime(period_date[1], "%d.%m.%Y %H:%M:%S")
+
+    filtered_df = df[
+        (df["Дата операции"] >= start_date) &
+        (df["Дата операции"] <= end_date)
+        ]
+    sorted_df = filtered_df.sort_values(by="Дата операции", ascending=True)
+    # print(sorted_df)
+    return sorted_df
+
+
+def cards_with_expenses(sorted_df: DataFrame) -> List[Dict]:
+    """ Принимает датафрейм, а возвращает список карт с расходами"""
+
+    card_expense_trans = []
+    card_sorted = sorted_df[
+        [
+            "Номер карты",
+            "Сумма операции",
+            "Кэшбэк",
+            "Сумма операции с округлением"
+        ]
+    ]
+    for index, row in card_sorted.iterrows():
+        if row["Сумма операции"] < 0:
+            last_digits = str(row["Номер карты"]).replace("*", "")
+            total_expense = row["Сумма операции с округлением"]
+            cashback = total_expense // 100
+            row = {
+                "last_digits": last_digits,
+                "total_spent": total_expense,
+                "cashback": cashback
+            }
+        card_expense_trans.append(row)
+    # print(card_expense_trans)
+    return card_expense_trans
+
+
+def get_top_transaction(sorted_df: DataFrame, get_top ) -> List[Dict]:
+    """Принимает датафрейм, а возвращает топ в количестве get_top
+    транзакций по сумме платежа"""
+    top_pay_transaction = []
+    sorted_pat_df = sorted_df.sort_values(by="Сумма платежа", ascending=False)
+    top_transaction = sorted_pat_df.head(get_top)
+    top_transaction_sorted = top_transaction[
+        [
+            "Дата платежа",
+            "Сумма платежа",
+            "Категория",
+            "Описание"
+        ]
+    ]
+    for index, row in top_transaction_sorted.iterrows():
+        print(row)
+
+
+
+#
+#
+# def get_500_company_tickers() -> list:
+#     api_url = 'https://api.api-ninjas.com/v1/sp500'
+#     response = requests.get(api_url, headers={'X-Api-Key': 'iI019ChSxoTeg94zTqiChw==QhpFM6wBFh70ftUg'})
+#     if response.status_code == 200:
+#         data = response.json()
+#         return [item["ticker"] for item in data]
+#     else:
+#         print("Ошибка получения тикеров:", response.status_code, response.text)
+#         return []
 
 
 def get_user_stocks_price(user_stocks):
@@ -77,9 +134,8 @@ def get_user_stocks_price(user_stocks):
 
 
 # if __name__ == "__main__":
-    # print(time_for_greeting())
-    #  operations = read_financial_operations_exel(r'C:\pytnon\Project1 bankoperations\data\operations.xlsx')
-    #  for op in operations:
-    #      print(operations)
-
-
+#     print(time_for_greeting())
+#     period_date = get_data_time
+#     operations = get_path_and_period(r'C:\pytnon\Project1 bankoperations\data\operations.xlsx', period_date)
+#     for op in operations:
+#         print(operations)
