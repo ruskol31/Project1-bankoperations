@@ -1,3 +1,5 @@
+import json
+import os
 from typing import List, Dict
 
 import requests
@@ -23,6 +25,10 @@ def time_for_greeting():
 
 
 def get_data_time(date_time: str, date_format: "%Y.%m.%d %H:%M:%S") -> list[str]:
+    """
+    Принимает и форматирует текущую дату
+
+    """
     dt = datetime.strptime(date_time, date_format)
     start_date = dt.replace(day=1)
 
@@ -79,7 +85,7 @@ def cards_with_expenses(sorted_df: DataFrame) -> List[Dict]:
     return card_expense_trans
 
 
-def get_top_transaction(sorted_df: DataFrame, get_top ) -> List[Dict]:
+def get_top_transaction(sorted_df: DataFrame, get_top) -> List[Dict]:
     """Принимает датафрейм, а возвращает топ в количестве get_top
     транзакций по сумме платежа"""
     top_pay_transaction = []
@@ -94,12 +100,55 @@ def get_top_transaction(sorted_df: DataFrame, get_top ) -> List[Dict]:
         ]
     ]
     for index, row in top_transaction_sorted.iterrows():
-        print(row)
+        transaction = {
+            "date": f"{row['Дата платежа']}",
+            "amount": f"{row['Сумма платежа']}",
+            "category": f"{row['Категория']}",
+            "description": f"{row['Описание']}"
+        }
+        top_pay_transaction.append(transaction)
+
+    return top_pay_transaction
 
 
+def get_currency(path_to_json: str) -> list[dict]:
+    """
+    Функция принимает га вход путь к файлу со списком валют
+     и выдает их курс на текущую дату
+    """
+    URL = "https://api.apilayer.com/exchangerates_data/convert"
+    currency_rates = []
+    API_KEY = os.getenv("API_KEY")
 
-#
-#
+    with open(path_to_json, "r", encoding="utf-8") as file:
+        data = json.load(file)
+        currences = data['user_currencies']
+
+        for currence in currences:
+            params = {
+                "amount": 1,
+                "from": f"{currence}",
+                "to": "RUB"
+            }
+            headers = {
+                "apikey": f"{API_KEY}"
+            }
+            response = requests.get(URL, headers=headers, params=params)
+
+            status_code = response.status_code
+            if status_code == 200:
+                result = response.json()
+                currency_code_response = result["query"]["from"]
+                currency_amount = round(result['result'], 2)
+                currency_rates.append({
+                    "currency": f"{currency_code_response}",
+                    "rate": f"{currency_amount}"
+                })
+            else:
+                print(f"Ошибка для {currence}: {response.status_code} - {response.text}")
+        return currency_rates
+
+
 # def get_500_company_tickers() -> list:
 #     api_url = 'https://api.api-ninjas.com/v1/sp500'
 #     response = requests.get(api_url, headers={'X-Api-Key': 'iI019ChSxoTeg94zTqiChw==QhpFM6wBFh70ftUg'})
@@ -111,19 +160,32 @@ def get_top_transaction(sorted_df: DataFrame, get_top ) -> List[Dict]:
 #         return []
 
 
-def get_user_stocks_price(user_stocks):
+def get_user_stocks_price(path_to_json: str) -> list[dict]:
+    """
+    Принимает путь к файлу с названиями акций пользователя и возвращает их стоимость
+
+    """
     responses = []
     api_key = os.getenv("API_KEY1")  # Получаешь ключ из .env
     if not api_key:
         print("Ошибка: API_KEY1 не найден в .env")
-    for stock in user_stocks:
-        api_url = 'https://api.api-ninjas.com/v1/stockprice?ticker={}'.format(stock)
-        response = requests.get(api_url, headers={'X-Api-Key': api_key})
-        if response.status_code == requests.codes.ok:
-            # print(response.text)
-            responses.append(response.text)
-        else:
-            print("Error:", response.status_code, response.text)
+
+    with open(path_to_json, "r", encoding="utf-8") as file:
+        data = json.load(file)
+        user_stocks = data['user_stocks']
+        for stock in user_stocks:
+            api_url = 'https://api.api-ninjas.com/v1/stockprice?ticker={}'.format(stock)
+            response = requests.get(api_url, headers={'X-Api-Key': api_key})
+            if response.status_code == requests.codes.ok:
+                result = response.json()
+                stock_ticker = result["ticker"]
+                price = round(result['price'], 2)
+                responses.append({
+                    "stock": f"{stock_ticker}",
+                    "price": f"{price}"
+                })
+            else:
+                print("Error:", response.status_code, response.text)
     return responses
 
 #
