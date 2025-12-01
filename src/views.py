@@ -37,7 +37,7 @@ def main_page(date_time: str) -> dict[str, Any]:
 
     data = {
         "greeting": greeting,
-        "cards": cards.tolist(),
+        "cards": f"{cards}",
         "top_transactions": top_5_transaction,
         "currency": currency,
         "stock_prices": stock_prices
