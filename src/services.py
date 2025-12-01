@@ -1,8 +1,5 @@
 import json
-import os
-from typing import List, Dict
 
-import requests
 import pandas as pd
 from datetime import datetime
 from pandas import DataFrame
