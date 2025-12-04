@@ -13,15 +13,18 @@ def time_for_greeting():
     возвращает приветствие в зависимости от времени обращения пользователя
 
     """
+
     user_request_time = datetime.now().hour
     if 5 <= user_request_time <= 12:
-        return "Доброе утро"
+        greeting = "Доброе утро"
     elif 12 <= user_request_time <= 18:
-        return "Добрый день"
+        greeting = "Добрый день"
     elif 18 <= user_request_time <= 22:
-        return "Добрый вечер"
+        greeting = "Добрый вечер"
     else:
-        return "Доброq ночи"
+        greeting = "Доброй ночи"
+
+    return greeting
 
 
 def get_data_time(date_time: str, date_format: "%Y.%m.%d %H:%M:%S") -> list[str]:

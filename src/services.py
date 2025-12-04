@@ -29,5 +29,5 @@ def cashback_analiser(file_path: str, year: int, month: int) -> dict[str, int]:
     result = cashback_by_category.to_dict()
     return json.dumps(result, ensure_ascii=False, indent=4)
 
-if __name__ == "__main__":
-    print(cashback_analiser(r'C:\pytnon\Project1 bankoperations\data\operations.xlsx', 2019, 5))
+# if __name__ == "__main__":
+#     print(cashback_analiser(r'C:\pytnon\Project1 bankoperations\data\operations.xlsx', 2019, 5))
