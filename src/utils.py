@@ -1,11 +1,14 @@
 import json
 import os
+import logging
 from typing import List, Dict
 
 import requests
 import pandas as pd
 from datetime import datetime
 from pandas import DataFrame
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def time_for_greeting():
@@ -24,6 +27,7 @@ def time_for_greeting():
     else:
         greeting = "Доброй ночи"
 
+    logging.info(f"Приветствие сгенерировано для часа: {user_request_time} → {greeting}")
     return greeting
 
 
@@ -204,3 +208,5 @@ def get_user_stocks_price(path_to_json: str) -> list[dict]:
 #     operations = get_path_and_period(r'C:\pytnon\Project1 bankoperations\data\operations.xlsx', period_date)
 #     for op in operations:
 #         print(operations)
+
+
