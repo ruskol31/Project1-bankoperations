@@ -1,8 +1,8 @@
 import json
 
 import pandas as pd
-from datetime import datetime
-from pandas import DataFrame
+# from datetime import datetime
+# from pandas import DataFrame
 
 
 def cashback_analiser(file_path: str, year: int, month: int) -> dict[str, int]:
@@ -16,9 +16,7 @@ def cashback_analiser(file_path: str, year: int, month: int) -> dict[str, int]:
         (df["Дата операции"].dt.month == month)
         ]
 
-    filtered_data = filtered_data[
-        (filtered_data["Кэшбэк"] > 0)
-        ]
+    filtered_data = filtered_data[(filtered_data["Кэшбэк"] > 0)]
 
     filtered_data = filtered_data[
         filtered_data["Сумма платежа"] < 0

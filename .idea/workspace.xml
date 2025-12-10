@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad9e9ecc-acfe-4cfa-9c15-ea6c75144354" name="Changes" comment="есть исполняемая часть старт тестов">
-      <change afterPath="$PROJECT_DIR$/src/spending_by_category_202512-08.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Project1 bankoperations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Project1 bankoperations.iml" afterDir="false" />
+    <list default="true" id="ad9e9ecc-acfe-4cfa-9c15-ea6c75144354" name="Changes" comment="написаны тесты">
+      <change afterPath="$PROJECT_DIR$/src/spending_by_category_202512-10.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +48,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python tests.Python tests for test_utils.test_api2_error.executor": "Run",
     "Python tests.Python tests for test_utils.test_api_error.executor": "Run",
     "Python tests.Python tests for test_utils.test_cards_with_expenses.executor": "Run",
     "Python tests.Python tests for test_utils.test_cards_with_expenses_multiple_cards.executor": "Run",
@@ -54,6 +58,7 @@
     "Python tests.Python tests for test_utils.test_get_path_and_period_basic.executor": "Run",
     "Python tests.Python tests for test_utils.test_get_top_transaction_simple.executor": "Run",
     "Python tests.Python tests for test_utils.test_one_currency_success.executor": "Run",
+    "Python tests.Python tests for test_utils.test_one_stock_success.executor": "Run",
     "Python tests.Python tests for test_utils.test_rounding.executor": "Run",
     "Python tests.Python tests for test_utils.test_time_for_greeting_day.executor": "Run",
     "Python tests.Python tests for test_utils.test_time_for_greeting_evening.executor": "Run",
@@ -69,7 +74,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "feature3",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/pytnon/Project1 bankoperations/data"
+    "last_opened_file_path": "C:/pytnon/Project1 bankoperations/data",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -82,7 +88,22 @@
       <recent name="C:\pytnon\Project1 bankoperations\data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for test_utils.test_rounding">
+  <component name="RunManager">
+    <configuration name="Python tests for test_utils.test_api2_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project1 bankoperations" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_utils.test_api2_error&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_utils.test_api_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project1 bankoperations" />
       <option name="ENV_FILES" value="" />
@@ -98,36 +119,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_utils.test_cards_with_expenses_multiple_cards" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Project1 bankoperations" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_utils.test_cards_with_expenses_multiple_cards&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_utils.test_get_top_transaction_simple" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
-      <module name="Project1 bankoperations" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_utils.test_get_top_transaction_simple&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Python tests for test_utils.test_one_currency_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project1 bankoperations" />
       <option name="ENV_FILES" value="" />
@@ -140,6 +131,21 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_utils.test_one_currency_success&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_utils.test_one_stock_success" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Project1 bankoperations" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_utils.test_one_stock_success&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -160,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for test_utils.test_api2_error" />
+        <item itemvalue="Python tests.Python tests for test_utils.test_one_stock_success" />
         <item itemvalue="Python tests.Python tests for test_utils.test_rounding" />
         <item itemvalue="Python tests.Python tests for test_utils.test_api_error" />
         <item itemvalue="Python tests.Python tests for test_utils.test_one_currency_success" />
-        <item itemvalue="Python tests.Python tests for test_utils.test_get_top_transaction_simple" />
-        <item itemvalue="Python tests.Python tests for test_utils.test_cards_with_expenses_multiple_cards" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764863620774</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="написаны тесты">
+      <option name="closed" value="true" />
+      <created>1765209038044</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1765209038044</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -271,14 +285,15 @@
     <MESSAGE value="Сервисы. Выгодные категории повышенного кешбэка" />
     <MESSAGE value="старт отчеты" />
     <MESSAGE value="есть исполняемая часть старт тестов" />
-    <option name="LAST_COMMIT_MESSAGE" value="есть исполняемая часть старт тестов" />
+    <MESSAGE value="написаны тесты" />
+    <option name="LAST_COMMIT_MESSAGE" value="написаны тесты" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/views.py</url>
-          <line>45</line>
+          <line>61</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

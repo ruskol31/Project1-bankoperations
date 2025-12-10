@@ -1,8 +1,8 @@
 import pytest
 from unittest.mock import Mock, patch, mock_open, MagicMock
 import pandas as pd
-import tempfile
-import os
+# import tempfile
+# import os
 from src.utils import (
     time_for_greeting,
     get_data_time,

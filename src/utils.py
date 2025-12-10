@@ -31,7 +31,7 @@ def time_for_greeting():
     return greeting
 
 
-def get_data_time(date_time: str, date_format: "%Y.%m.%d %H:%M:%S") -> list[str]:
+def get_data_time(date_time: str, date_format: '%Y.%m.%d %H:%M:%S') -> list[str]:
     """
     Принимает и форматирует текущую дату
 
@@ -59,7 +59,7 @@ def get_path_and_period(path_to_file: str, period_date: List[str]) -> DataFrame:
     filtered_df = df[
         (df["Дата операции"] >= start_date) &
         (df["Дата операции"] <= end_date)
-        ]
+    ]
     sorted_df = filtered_df.sort_values(by="Дата операции", ascending=True)
     # print(sorted_df)
     return sorted_df
@@ -208,5 +208,3 @@ def get_user_stocks_price(path_to_json: str) -> list[dict]:
 #     operations = get_path_and_period(r'C:\pytnon\Project1 bankoperations\data\operations.xlsx', period_date)
 #     for op in operations:
 #         print(operations)
-
-
