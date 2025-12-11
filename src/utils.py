@@ -1,11 +1,14 @@
 import json
+import logging
 import os
-from typing import List, Dict
-
-import requests
-import pandas as pd
 from datetime import datetime
+from typing import Dict, List
+
+import pandas as pd
+import requests
 from pandas import DataFrame
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 def time_for_greeting():
@@ -13,18 +16,22 @@ def time_for_greeting():
     возвращает приветствие в зависимости от времени обращения пользователя
 
     """
+
     user_request_time = datetime.now().hour
     if 5 <= user_request_time <= 12:
-        return "Доброе утро"
+        greeting = "Доброе утро"
     elif 12 <= user_request_time <= 18:
-        return "Добрый день"
+        greeting = "Добрый день"
     elif 18 <= user_request_time <= 22:
-        return "Добрый вечер"
+        greeting = "Добрый вечер"
     else:
-        return "Доброq ночи"
+        greeting = "Доброй ночи"
+
+    logging.info(f"Приветствие сгенерировано для часа: {user_request_time} → {greeting}")
+    return greeting
 
 
-def get_data_time(date_time: str, date_format: "%Y.%m.%d %H:%M:%S") -> list[str]:
+def get_data_time(date_time: str, date_format: '%Y.%m.%d %H:%M:%S') -> list[str]:
     """
     Принимает и форматирует текущую дату
 
@@ -50,9 +57,9 @@ def get_path_and_period(path_to_file: str, period_date: List[str]) -> DataFrame:
     end_date = datetime.strptime(period_date[1], "%d.%m.%Y %H:%M:%S")
 
     filtered_df = df[
-        (df["Дата операции"] >= start_date) &
-        (df["Дата операции"] <= end_date)
-        ]
+        (df["Дата операции"] >= start_date)
+        & (df["Дата операции"] <= end_date)
+    ]
     sorted_df = filtered_df.sort_values(by="Дата операции", ascending=True)
     # print(sorted_df)
     return sorted_df
