@@ -1,17 +1,13 @@
-import pytest
-from unittest.mock import Mock, patch, mock_open, MagicMock
+from unittest.mock import MagicMock, Mock, mock_open, patch
+
 import pandas as pd
+import pytest
+
 # import tempfile
 # import os
-from src.utils import (
-    time_for_greeting,
-    get_data_time,
-    get_path_and_period,
-    cards_with_expenses,
-    get_top_transaction,
-    get_currency,
-    get_user_stocks_price
-)
+from src.utils import (cards_with_expenses, get_currency, get_data_time,
+                       get_path_and_period, get_top_transaction,
+                       get_user_stocks_price, time_for_greeting)
 
 
 @pytest.fixture

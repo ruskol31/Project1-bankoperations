@@ -1,19 +1,14 @@
-import logging
-from typing import Any
-# import pandas as pd
-from dotenv import load_dotenv
 # import os
 import json
+import logging
+from typing import Any
 
-from src.utils import (
-    time_for_greeting,
-    get_data_time,
-    get_path_and_period,
-    cards_with_expenses,
-    get_top_transaction,
-    get_currency,
-    get_user_stocks_price
-)
+# import pandas as pd
+from dotenv import load_dotenv
+
+from src.utils import (cards_with_expenses, get_currency, get_data_time,
+                       get_path_and_period, get_top_transaction,
+                       get_user_stocks_price, time_for_greeting)
 
 logging.basicConfig(
     level=logging.INFO,

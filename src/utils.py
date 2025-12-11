@@ -1,11 +1,11 @@
 import json
-import os
 import logging
-from typing import List, Dict
-
-import requests
-import pandas as pd
+import os
 from datetime import datetime
+from typing import Dict, List
+
+import pandas as pd
+import requests
 from pandas import DataFrame
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -57,8 +57,8 @@ def get_path_and_period(path_to_file: str, period_date: List[str]) -> DataFrame:
     end_date = datetime.strptime(period_date[1], "%d.%m.%Y %H:%M:%S")
 
     filtered_df = df[
-        (df["Дата операции"] >= start_date) &
-        (df["Дата операции"] <= end_date)
+        (df["Дата операции"] >= start_date)
+        & (df["Дата операции"] <= end_date)
     ]
     sorted_df = filtered_df.sort_values(by="Дата операции", ascending=True)
     # print(sorted_df)

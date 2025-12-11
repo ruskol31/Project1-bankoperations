@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad9e9ecc-acfe-4cfa-9c15-ea6c75144354" name="Changes" comment="написаны тесты">
-      <change afterPath="$PROJECT_DIR$/src/spending_by_category_202512-10.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.me" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.me" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/reports.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
@@ -45,50 +44,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python tests.Python tests for test_utils.test_api2_error.executor": "Run",
-    "Python tests.Python tests for test_utils.test_api_error.executor": "Run",
-    "Python tests.Python tests for test_utils.test_cards_with_expenses.executor": "Run",
-    "Python tests.Python tests for test_utils.test_cards_with_expenses_multiple_cards.executor": "Run",
-    "Python tests.Python tests for test_utils.test_get_data_time.executor": "Run",
-    "Python tests.Python tests for test_utils.test_get_data_time_basic.executor": "Run",
-    "Python tests.Python tests for test_utils.test_get_path_and_period.executor": "Run",
-    "Python tests.Python tests for test_utils.test_get_path_and_period_basic.executor": "Run",
-    "Python tests.Python tests for test_utils.test_get_top_transaction_simple.executor": "Run",
-    "Python tests.Python tests for test_utils.test_one_currency_success.executor": "Run",
-    "Python tests.Python tests for test_utils.test_one_stock_success.executor": "Run",
-    "Python tests.Python tests for test_utils.test_rounding.executor": "Run",
-    "Python tests.Python tests for test_utils.test_time_for_greeting_day.executor": "Run",
-    "Python tests.Python tests for test_utils.test_time_for_greeting_evening.executor": "Run",
-    "Python tests.Python tests for test_utils.test_time_for_greeting_morning.executor": "Run",
-    "Python tests.Python tests for test_utils.test_time_for_greeting_night.executor": "Run",
-    "Python tests.Python tests in test_utils.py.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.reports.executor": "Run",
-    "Python.services.executor": "Run",
-    "Python.utils.executor": "Run",
-    "Python.views.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature3",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/pytnon/Project1 bankoperations/data",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test_utils.test_api2_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_api_error.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_cards_with_expenses.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_cards_with_expenses_multiple_cards.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_get_data_time.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_get_data_time_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_get_path_and_period.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_get_path_and_period_basic.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_get_top_transaction_simple.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_one_currency_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_one_stock_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_rounding.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_time_for_greeting_day.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_time_for_greeting_evening.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_time_for_greeting_morning.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_utils.test_time_for_greeting_night.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_utils.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reports.executor&quot;: &quot;Run&quot;,
+    &quot;Python.services.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;Python.views.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature3&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/pytnon/Project1 bankoperations/data&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "GitIgnore"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;GitIgnore&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\pytnon\Project1 bankoperations\data" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for test_utils.test_api2_error">
     <configuration name="Python tests for test_utils.test_api2_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Project1 bankoperations" />
       <option name="ENV_FILES" value="" />
@@ -262,7 +261,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765209038044</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="написаны тесты">
+      <option name="closed" value="true" />
+      <created>1765382934405</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1765382934405</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -293,7 +300,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/views.py</url>
-          <line>61</line>
+          <line>56</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

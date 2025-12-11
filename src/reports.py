@@ -74,9 +74,9 @@ def spending_by_category(transactions: pd.DataFrame,
     three_months_ago = reference_date - timedelta(days=90)
     logger.debug(f"Период анализа: с {three_months_ago} по {reference_date}")
     filtered = transactions[
-        (transactions["Дата операции"] >= three_months_ago) &
-        (transactions["Дата операции"] <= reference_date) &
-        (transactions["Категория"] == category)
+        (transactions["Дата операции"] >= three_months_ago)
+        & (transactions["Дата операции"] <= reference_date)
+        & (transactions["Категория"] == category)
     ]
     logger.info(f"Найдено {len(filtered)} транзакций по категории '{category}'")
 
